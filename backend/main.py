@@ -1,7 +1,7 @@
 """FastAPI application for OBD-II Problem Detector.
 
-Runs locally with `python main.py` (port 8000) and on Vercel as a serverless function
-(see api/index.py). Nothing here keeps state between requests.
+Runs locally with `python main.py` (port 8000) and on Vercel as the `backend` service
+(see vercel.json). Nothing here keeps state between requests.
 """
 
 import asyncio

@@ -8,5 +8,6 @@ error.txt
 xgboost_obdii_model.joblib
 backend/xgboost_obdii_model.joblib
 backend/.env
+backend/__pycache__
 frontend/node_modules
 frontend/dist

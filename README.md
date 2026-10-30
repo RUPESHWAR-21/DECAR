@@ -3,7 +3,7 @@
 A vehicle diagnostics dashboard. An XGBoost model scores OBD-II sensor readings as **Normal** or **Has Problem**, both for a simulated live vehicle and for readings entered by hand. Every check is stored in Supabase.
 
 - **Frontend:** React + Vite (`frontend/`)
-- **API:** FastAPI (`backend/`), deployed on Vercel as a Python serverless function (`api/index.py`)
+- **API:** FastAPI (`backend/`), deployed on Vercel as a Python service
 - **Database:** Supabase (`supabase/schema.sql`)
 
 ## Run locally (Windows)
@@ -24,7 +24,7 @@ In the Supabase dashboard, open **SQL Editor**, paste `supabase/schema.sql`, and
 
 ## Deploy to Vercel
 
-1. Import this GitHub repository in Vercel (**Add New → Project**). Leave **Root Directory** as the repository root. `vercel.json` already sets the build command, output folder and API function.
+1. Import this GitHub repository in Vercel (**Add New → Project**). Leave **Root Directory** as the repository root. `vercel.json` defines two services: `frontend` (Vite, serves `/`) and `backend` (FastAPI, serves `/api/*`).
 2. Under **Settings → Environment Variables**, add:
    - `SUPABASE_URL`: your project URL
    - `SUPABASE_ANON_KEY`: your anon key
