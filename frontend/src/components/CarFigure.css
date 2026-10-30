@@ -1,0 +1,125 @@
+.car-figure {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  aspect-ratio: 800 / 320;
+}
+
+/* Cutout photos are front three-quarter shots: taller frame, soft ground shadow. */
+.car-figure.is-photo {
+  aspect-ratio: 16 / 8;
+}
+
+.car-figure.is-photo::before {
+  content: '';
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 1%;
+  height: 9%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(0, 0, 0, 0.32), transparent);
+  filter: blur(4px);
+}
+
+.car-credit {
+  position: absolute;
+  right: 0;
+  bottom: -22px;
+  font-size: 10.5px;
+  color: var(--muted);
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.car-credit a {
+  color: inherit;
+}
+
+.car-svg,
+.car-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.car-photo {
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.car-photo.is-ready {
+  opacity: 1;
+}
+
+.car-svg path,
+.car-svg rect {
+  transition: fill 0.35s ease;
+}
+
+.car-lines {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: 0.22;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+
+.car-handle {
+  fill: #000;
+  opacity: 0.28;
+}
+
+.car-headlight {
+  fill: #f4f1e8;
+  stroke: #000;
+  stroke-opacity: 0.25;
+}
+
+.car-taillight {
+  fill: #a3231b;
+}
+
+.car-tyre {
+  fill: #151517;
+}
+
+.car-tyre-wall {
+  fill: none;
+  stroke: #2b2b2f;
+  stroke-width: 2;
+}
+
+.car-rim-face {
+  fill: #8e939a;
+}
+
+.car-spoke {
+  fill: #c9cdd2;
+}
+
+.car-hub {
+  fill: #5d6168;
+  stroke: #c9cdd2;
+  stroke-width: 2;
+}
+
+.car-rim-edge {
+  fill: none;
+  stroke: #d6d9dd;
+  stroke-width: 2;
+}
+
+.car-svg.is-moving .car-rim {
+  animation: car-spin 1s linear infinite;
+}
+
+@keyframes car-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

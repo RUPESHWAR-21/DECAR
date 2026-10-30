@@ -1,0 +1,23 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+dist/
+
+# Vercel
+.vercel/
+
+# Old prototype and scratch files
+/predictive/
+/app (1).py
+/bat.txt
+/error.txt
+/package-lock.json

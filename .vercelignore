@@ -1,0 +1,12 @@
+.venv
+predictive
+tools
+app (1).py
+verify_api.py
+bat.txt
+error.txt
+xgboost_obdii_model.joblib
+backend/xgboost_obdii_model.joblib
+backend/.env
+frontend/node_modules
+frontend/dist

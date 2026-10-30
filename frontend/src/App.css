@@ -1,0 +1,152 @@
+.shell {
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.page {
+  max-width: 1360px;
+  margin: 0 auto;
+  background: var(--page);
+  border: var(--border-w) solid var(--line);
+  border-radius: var(--r-lg);
+  min-height: calc(100vh - 32px);
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 28px;
+  border-bottom: var(--border-w) solid var(--line);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: none;
+}
+
+.brand-mark {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.brand-sub {
+  font-size: 11px;
+  line-height: 1.15;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+.nav {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav .pill {
+  min-width: 112px;
+}
+
+.topbar-end {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: none;
+}
+
+.db-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: var(--border-w) solid var(--line);
+  background: var(--surface);
+  color: var(--text-2);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.db-chip .dot {
+  color: var(--muted);
+}
+
+.db-chip.is-ok .dot {
+  color: var(--ok);
+}
+
+.db-chip.is-off .dot {
+  color: var(--bad);
+}
+
+.theme-switch {
+  display: flex;
+  gap: 4px;
+  padding: 3px;
+  border-radius: 999px;
+  border: var(--border-w) solid var(--line);
+  background: var(--surface);
+}
+
+.theme-switch .round-btn {
+  border-color: transparent;
+  background: transparent;
+}
+
+.theme-switch .round-btn.is-active {
+  background: var(--ink);
+  color: var(--ink-text);
+}
+
+.main {
+  flex: 1;
+  padding: 28px;
+}
+
+@media (max-width: 900px) {
+  .shell {
+    padding: 0;
+  }
+
+  .page {
+    border-radius: 0;
+    border: 0;
+    min-height: 100vh;
+  }
+
+  .topbar {
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .nav {
+    order: 3;
+    flex-basis: 100%;
+    justify-content: flex-start;
+  }
+
+  .nav .pill {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .topbar-end {
+    margin-left: auto;
+  }
+
+  .db-chip span:not(.dot) {
+    display: none;
+  }
+
+  .main {
+    padding: 16px;
+  }
+}
