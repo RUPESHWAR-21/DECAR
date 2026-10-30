@@ -136,7 +136,7 @@ def get_live_prediction(vehicle: Dict[str, Any], started_at: float, now: float =
     reading, mode = simulate_reading(vehicle, started_at, now)
     label, pred_class, probability = get_model().predict(reading)
     return {
-        "timestamp": datetime.fromtimestamp(now, timezone.utc).astimezone().strftime("%H:%M:%S"),
+        "timestamp": datetime.fromtimestamp(now, timezone.utc).isoformat(),
         "prediction": label,
         "prediction_class": pred_class,
         "probability": probability,

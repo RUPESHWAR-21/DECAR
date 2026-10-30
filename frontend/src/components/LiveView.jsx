@@ -135,7 +135,7 @@ export default function LiveView() {
               <span className="dot" />
               {isConnected ? 'Live, every 1 s' : 'Reconnecting…'}
             </span>
-            <span className="eyebrow">Last reading {data?.timestamp || '—'}</span>
+            <span className="eyebrow">Last reading {data ? new Date(data.timestamp).toLocaleTimeString() : '—'}</span>
           </div>
         </aside>
 

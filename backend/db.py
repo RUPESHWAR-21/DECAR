@@ -96,7 +96,7 @@ def list_predictions(source: Optional[str] = None, limit: int = 100) -> List[Dic
     """Newest-first prediction rows. Raises RuntimeError with a readable message."""
     global _last_error
     if not is_configured():
-        raise RuntimeError("Supabase is not configured. Set SUPABASE_URL and SUPABASE_ANON_KEY in backend/.env.")
+        raise RuntimeError("Supabase is not configured. Set SUPABASE_URL and SUPABASE_ANON_KEY (backend/.env locally, Environment Variables on Vercel).")
     params = {"select": "*", "order": "created_at.desc", "limit": str(limit)}
     if source in ("manual", "live"):
         params["source"] = f"eq.{source}"
@@ -116,7 +116,7 @@ def list_predictions(source: Optional[str] = None, limit: int = 100) -> List[Dic
 def status() -> Dict[str, Any]:
     """Check the connection by reading one row."""
     if not is_configured():
-        return {"configured": False, "connected": False, "error": "Missing Supabase settings in backend/.env"}
+        return {"configured": False, "connected": False, "error": "Missing SUPABASE_URL / SUPABASE_ANON_KEY (backend/.env locally, Environment Variables on Vercel)"}
     try:
         list_predictions(limit=1)
         return {"configured": True, "connected": True, "error": None}
